@@ -30,6 +30,9 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 
+const PORT = process.env.PORT || 8080;
+
+
 //routes
 app.use('/api/v1/user' , userRoute);
 app.use('/api/v1/blog' , blogRoute);
@@ -43,6 +46,6 @@ app.use('/api/v1/blog' , blogRoute);
 
 
 //listen
-app.listen(8080 , ()=>{
-    console.log("Server started on port 8080");
+app.listen(PORT , ()=>{
+    console.log(`Server started on port ${PORT}`);
 })
